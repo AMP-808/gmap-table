@@ -7,7 +7,7 @@ function MaterialTableThree() {
     const [opsData, setOpsData] = useState([]);
 
     useEffect(() => {
-        fetch("/airops")
+        fetch("/api/passwords")
             .then((response) => response.json())
             .then((json) => setOpsData(json));
     }, [])
