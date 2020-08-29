@@ -67,7 +67,7 @@ function AiropsTable() {
         {
             title: "Link to Apply",
             field: "link_to_apply",
-            render: (rowData) => <a href={rowData.link_to_apply} target={{_blank}}>Apply</a>,
+            render: (rowData) => <a href={rowData.link_to_apply} target="_blank">Apply</a>,
             sorting: false,
             searchable: false
         }

@@ -112,7 +112,7 @@ export default function Map(props) {
                         <div style={{textAlign: 'left'}}>
                             <h3>{selected.company_name}</h3>
                             <p>{selected.address}</p>
-                            <a href={selected.link_to_apply} target={{_blank}}>Apply</a>
+                            <a href={selected.link_to_apply} target="_blank">Apply</a>
                         </div>
                 </InfoWindow>) : null}
             </GoogleMap>
