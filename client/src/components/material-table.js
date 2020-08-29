@@ -3,7 +3,7 @@ import MaterialTable, {MTableToolbar} from "material-table";
 import moment from "moment";
 import SimpleAccordion from "./accordion";
 
-function MaterialTableThree() {
+function MaterialTable() {
     const [opsData, setOpsData] = useState([]);
 
     useEffect(() => {
@@ -67,7 +67,7 @@ function MaterialTableThree() {
         {
             title: "Link to Apply",
             field: "link_to_apply",
-            render: (rowData) => <a href={rowData.link_to_apply}>Apply</a>,
+            render: (rowData) => <a href={rowData.link_to_apply} target={{_blank}}>Apply</a>,
             sorting: false,
             searchable: false
         }
@@ -98,4 +98,4 @@ function MaterialTableThree() {
     );
 }
 
-export default MaterialTableThree
+export default MaterialTable

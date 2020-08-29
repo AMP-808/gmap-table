@@ -9,15 +9,7 @@ import {
 // import "@reach/combobox/styles.css"
 require('dotenv').config();
 
-var screenWidth = window.innerWidth;
 const libraries = ["places"];
-/* const mapContainerStyle = {
-    width: `${1-(50/screenWidth) * 100}vw`, //'95vw',
-    height: '500px',
-    //position: 'relative',
-    margin: 'auto'
-    //textAlign: center,
-}; */
 const center = {
     lat: 21.306944,
     lng: -157.858337,
@@ -120,7 +112,7 @@ export default function Map(props) {
                         <div style={{textAlign: 'left'}}>
                             <h3>{selected.company_name}</h3>
                             <p>{selected.address}</p>
-                            <a href={selected.link_to_apply}>Apply</a>
+                            <a href={selected.link_to_apply} target={{_blank}}>Apply</a>
                         </div>
                 </InfoWindow>) : null}
             </GoogleMap>
