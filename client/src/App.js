@@ -3,7 +3,7 @@ import './App.css';
 //import DataTableContainer from './components/dataTableContainer';
 //import MaterialDataTable from './components/materialDataTable';
 //import EnhancedTable from './components/materialSortableTable';
-import MaterialTable from './components/material-table';
+import AiropsTable from './components/material-table';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <header className="App-header">
         <h1 id='Logo'>FAPA.aero</h1>
       </header>
-      <MaterialTable/>
+      <AiropsTable/>
       {/* <Map /> */}
       {/* <EnhancedTable/> */}
       {/* <MaterialDataTable/> */}

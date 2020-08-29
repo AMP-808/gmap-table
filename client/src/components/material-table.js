@@ -3,7 +3,7 @@ import MaterialTable, {MTableToolbar} from "material-table";
 import moment from "moment";
 import SimpleAccordion from "./accordion";
 
-function MaterialTable() {
+function AiropsTable() {
     const [opsData, setOpsData] = useState([]);
 
     useEffect(() => {
@@ -98,4 +98,4 @@ function MaterialTable() {
     );
 }
 
-export default MaterialTable
+export default AiropsTable
