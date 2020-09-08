@@ -9,7 +9,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1 id="Logo">FAPA.aero</h1>
+        <h1 id="Logo">
+          <img src="fapa-logo.png" alt="Fapa logo"></img>
+        </h1>
       </header>
       <AiropsTable />
       {/* <Map /> */}

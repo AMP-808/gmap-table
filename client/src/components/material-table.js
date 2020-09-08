@@ -6,6 +6,10 @@ import moment from "moment";
 import SimpleAccordion from "./accordion";
 import "../App.css";
 
+const lightBlue = "#1C85E7";
+const darkBlue = "#1C466C";
+const grey = "#e2e2e2";
+
 function AiropsTable() {
   const [opsData, setOpsData] = useState([]);
 
@@ -16,29 +20,6 @@ function AiropsTable() {
   }, []);
 
   const data = React.useMemo(() => opsData, [opsData]);
-
-  /* const CustomFilter = (props) => {
-    const [selectedVal, setSelectedVal] = useState(0);
-
-    function handleChange(e) {
-      const val = e.target.value;
-      setSelectedVal(val);
-      props.onFilterChanged(props.columnDef.id, val);
-    }
-
-    return (
-      <Autocomplete
-        id="combo-box-demo"
-        options={props.company_name}
-        onChange={handleChange}
-        getOptionLabel={(option) => option.title}
-        style={{ width: 170 }}
-        renderInput={(params) => (
-          <TextField {...params} label="Company Name" variant="outlined" />
-        )}
-      />
-    );
-  }; */
 
   const columns = [
     //{ title: "DSGN Code", field: "dsgn_code", render: null },
@@ -66,7 +47,7 @@ function AiropsTable() {
     {
       title: "Zip",
       field: "zip",
-      type: "numeric",
+      //type: "numeric",
     },
     {
       title: "Number of Planes",
@@ -121,10 +102,17 @@ function AiropsTable() {
   return (
     <div className="table">
       <MaterialTable
-        title="Airline Operators"
+        //style={{ backgroundColor: "#e2e2e2" }}
+        title="Air Operators"
         columns={columns}
         data={data}
-        options={{ filtering: true }}
+        options={{
+          filtering: true,
+          headerStyle: {
+            backgroundColor: darkBlue,
+            color: "#FFF",
+          },
+        }}
         components={{
           Toolbar: (props) => (
             <div>
@@ -141,24 +129,7 @@ function AiropsTable() {
               </div>
             </div>
           ),
-          //   FilterRow: (props) => (
-          //     <Autocomplete
-          //       id="combo-box-demo"
-          //       options={data.props}
-          //       getOptionLabel={(option) => option.title}
-          //       style={{ width: 200, padding: 10 }}
-          //       renderInput={(params) => (
-          //         <TextField {...params} label="Combo box" variant="outlined" />
-          //       )}
-          //     />
-          //   ),
         }}
-        // onRowClick={((evt, selectedRow) => selectedRow !== selectedRow.tableData.id ? setSelectedRow(selectedRow.tableData.id): null)}
-        // options={{
-        //     rowStyle: rowData => ({
-        //     backgroundColor: (selectedRow === rowData.tableData.id) ? '#EEE' : '#FFF'
-        //     })
-        // }}
       />
     </div>
   );

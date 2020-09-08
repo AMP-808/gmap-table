@@ -24,26 +24,11 @@ export default function Map(props) {
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
     mapRef.current = map;
-  });
-
-  /* const mapContainerStyle = {
-    width: `100%`, //'95vw',
-    justifyContent: "center",
-    height: "500px",
-    //position: 'static',
-    margin: "auto",
-    //textAlign: center,
-  }; */
+  }, []);
 
   const { isLoaded, loadError } = useLoadScript({
     googleMapsApiKey: "AIzaSyC8vjNCOlmexV02HRdjf_bGBRPWVmmx8s8",
     libraries,
-  });
-
-  const [dimensions, setDimensions] = React.useState({
-    maxWidth: "950px",
-    width: `${window.innerWidth - 50}px`, //'95vw',
-    height: "500px",
   });
 
   function debounce(fn, ms) {
@@ -58,6 +43,12 @@ export default function Map(props) {
   }
 
   //rerender the map on window resize from: https://www.pluralsight.com/guides/re-render-react-component-on-window-resize
+  const [dimensions, setDimensions] = React.useState({
+    maxWidth: "950px",
+    width: `${window.innerWidth - 50}px`, //'95vw',
+    height: "500px",
+  });
+
   React.useEffect(() => {
     const debouncedHandleResize = debounce(function handleResize() {
       setDimensions({
@@ -85,6 +76,7 @@ export default function Map(props) {
         zoom={8}
         center={center}
         options={options}
+        onLoad={onMapLoad}
       >
         {props.data.map((marker) => (
           <Marker
