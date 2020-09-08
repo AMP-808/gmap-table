@@ -17,6 +17,8 @@ function AiropsTable() {
     fetch("/api/passwords")
       .then((response) => response.json())
       .then((json) => setOpsData(json));
+    //make site scroll to top on load
+    window.scrollTo(0, 0);
   }, []);
 
   const data = React.useMemo(() => opsData, [opsData]);
@@ -90,7 +92,11 @@ function AiropsTable() {
       field: "link_to_apply",
       filtering: false,
       render: (rowData) => (
-        <a href={rowData.link_to_apply} target="_blank">
+        <a
+          href={rowData.link_to_apply}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Apply
         </a>
       ),

@@ -38,3 +38,40 @@ img {
   width: 219px;
   height: auto;
 }
+
+.search {
+  position: absolute;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 250px;
+  z-index: 10;
+}
+
+.search input {
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.search:focus {
+  outline-color: #e2e2e2;
+}
+
+.locate {
+  position: absolute;
+  bottom: 9rem;
+  right: 1.5rem;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border: none;
+  z-index: 10;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px #999;
+}
+
+.locate:focus {
+  outline-color: #999;
+}
