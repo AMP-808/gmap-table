@@ -17,7 +17,7 @@ import {
   ComboboxOption,
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
-import PersonPinCircleIcon from "@material-ui/icons/PersonPinCircle";
+import LocationSearchingIcon from "@material-ui/icons/LocationSearching";
 
 //import {formatRelative} from 'date-fns'
 // import "@reach/combobox/styles.css"
@@ -156,7 +156,7 @@ function Locate({ panTo }) {
         );
       }}
     >
-      <PersonPinCircleIcon />
+      <LocationSearchingIcon />
     </button>
   );
 }

@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/Textfield"; */
 import moment from "moment";
 import SimpleAccordion from "./accordion";
 import "../App.css";
+import SearchIcon from "@material-ui/icons/Search";
 
 const lightBlue = "#1C85E7";
 const darkBlue = "#1C466C";
@@ -112,6 +113,7 @@ function AiropsTable() {
         title="Air Operators"
         columns={columns}
         data={data}
+        icons={{ Filter: () => <SearchIcon style={{ fontSize: "medium" }} /> }}
         options={{
           filtering: true,
           search: false,
