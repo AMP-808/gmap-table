@@ -61,9 +61,10 @@ img {
 
 .locate {
   position: absolute;
-  bottom: 9rem;
-  right: 1.5rem;
+  bottom: 8rem;
+  right: 0.6rem;
   background: white;
+  color: #666;
   width: 40px;
   height: 40px;
   border: none;
@@ -74,4 +75,8 @@ img {
 
 .locate:focus {
   outline-color: #999;
+}
+
+.locate:hover {
+  color: #333334;
 }

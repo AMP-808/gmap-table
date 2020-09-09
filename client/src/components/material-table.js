@@ -52,8 +52,8 @@ function AiropsTable() {
       //type: "numeric",
     },
     {
-      title: "Number of Planes",
-      field: "number_of_planes",
+      title: "Number of Aircraft",
+      field: "number_of_aircraft",
       type: "numeric",
       filtering: false,
       searchable: false,
@@ -114,6 +114,7 @@ function AiropsTable() {
         data={data}
         options={{
           filtering: true,
+          search: false,
           headerStyle: {
             backgroundColor: darkBlue,
             color: "#FFF",

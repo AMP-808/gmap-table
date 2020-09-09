@@ -91,7 +91,7 @@ export default function Map(props) {
   return (
     <div>
       <Search panTo={panTo} />
-      <Locate panTo={panTo} />
+
       <GoogleMap
         mapContainerStyle={dimensions}
         zoom={4}
@@ -99,6 +99,7 @@ export default function Map(props) {
         options={options}
         onLoad={onMapLoad}
       >
+        <Locate panTo={panTo} />
         {props.data.map((marker) => (
           <Marker
             position={{
