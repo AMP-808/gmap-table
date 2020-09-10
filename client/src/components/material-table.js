@@ -2,9 +2,9 @@ import React from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
 import moment from "moment";
 import SimpleAccordion from "./accordion";
-import "../App.css";
+import "../css/App.css";
 import SearchIcon from "@material-ui/icons/Search";
-import { MyContext } from "../App";
+import { AppMapContext } from "../contexts/MapContext";
 
 const lightBlue = "#1C85E7";
 const darkBlue = "#1C466C";
@@ -12,7 +12,11 @@ const grey = "#e2e2e2";
 
 function AiropsTable() {
   const [opsData, setOpsData] = React.useState([]);
-  const { panMap } = React.useContext(MyContext);
+  const { dispatch } = React.useContext(AppMapContext);
+
+  const panMap = (data) => {
+    dispatch({ type: "openInMap", data });
+  };
 
   //! refactor this to be done on app load
   React.useEffect(() => {

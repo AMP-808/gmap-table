@@ -6,7 +6,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Map from "./map";
-import { MyContext } from "../App";
+import { AppMapContext } from "../contexts/MapContext";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 function SimpleAccordion(props) {
   const classes = useStyles();
-  const { expanded, toggleExpanded, itemLatLng } = React.useContext(MyContext);
+  const { expanded, toggleExpanded, itemLatLng } = React.useContext(AppMapContext);
   //const mapRef = React.useRef(null);
   //const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
