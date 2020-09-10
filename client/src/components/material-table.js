@@ -111,13 +111,13 @@ function AiropsTable() {
         columns={columns}
         data={data}
         icons={{ Filter: () => <SearchIcon style={{ fontSize: "medium" }} /> }}
-        // actions={[
-        //   {
-        //     icon: "map",
-        //     tooltip: "Show on map",
-        //     onClick: (event, rowData) => panMap(rowData),
-        //   },
-        // ]}
+        actions={[
+          {
+            icon: "map",
+            tooltip: "Show on map",
+            onClick: (event, rowData) => panMap(rowData),
+          },
+        ]}
         options={{
           actionsColumnIndex: -1,
           filtering: true,
