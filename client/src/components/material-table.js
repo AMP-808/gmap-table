@@ -1,25 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import MaterialTable, { MTableToolbar } from "material-table";
-/* import Autocomplete from "@material-ui/lab/Autocomplete";
-import TextField from "@material-ui/core/Textfield"; */
 import moment from "moment";
 import SimpleAccordion from "./accordion";
 import "../App.css";
 import SearchIcon from "@material-ui/icons/Search";
+import { MyContext } from "../App";
 
 const lightBlue = "#1C85E7";
 const darkBlue = "#1C466C";
 const grey = "#e2e2e2";
 
 function AiropsTable() {
-  const [opsData, setOpsData] = useState([]);
+  const [opsData, setOpsData] = React.useState([]);
+  const { panMap } = React.useContext(MyContext);
 
-  useEffect(() => {
+  //! refactor this to be done on app load
+  React.useEffect(() => {
     fetch("/api/passwords")
       .then((response) => response.json())
       .then((json) => setOpsData(json));
-    //make site scroll to top on load
-    window.scrollTo(0, 0);
   }, []);
 
   const data = React.useMemo(() => opsData, [opsData]);
@@ -30,7 +29,6 @@ function AiropsTable() {
       title: "Company Name",
       field: "company_name",
       defaultSort: "asc",
-      //filterComponent: (props) => <CustomFilter {...props} />,
     },
     {
       title: "Address",
@@ -50,7 +48,6 @@ function AiropsTable() {
     {
       title: "Zip",
       field: "zip",
-      //type: "numeric",
     },
     {
       title: "Number of Aircraft",
@@ -114,14 +111,13 @@ function AiropsTable() {
         columns={columns}
         data={data}
         icons={{ Filter: () => <SearchIcon style={{ fontSize: "medium" }} /> }}
-        actions={[
-          {
-            icon: "map",
-            tooltip: "Show on map",
-            //! make the onclick actually do shit
-            onClick: (event, rowData) => alert("You saved " + rowData.name),
-          },
-        ]}
+        // actions={[
+        //   {
+        //     icon: "map",
+        //     tooltip: "Show on map",
+        //     onClick: (event, rowData) => panMap(rowData),
+        //   },
+        // ]}
         options={{
           actionsColumnIndex: -1,
           filtering: true,

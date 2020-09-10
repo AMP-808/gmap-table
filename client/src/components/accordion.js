@@ -6,6 +6,7 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Map from "./map";
+import { MyContext } from "../App";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,19 +21,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SimpleAccordion(props) {
-  const [expanded, setExpanded] = React.useState(false);
+function SimpleAccordion(props) {
   const classes = useStyles();
+  const { expanded, toggleExpanded, itemLatLng } = React.useContext(MyContext);
+  //const mapRef = React.useRef(null);
+  //const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
 
-  function toggleExpanded() {
-    setExpanded(!expanded);
-  }
+  const handleClick = () => {
+    toggleExpanded();
+    //scrollToRef();
+  };
 
   return (
     <div className={classes.root}>
+      {" "}
+      {/*ref={mapRef}> */}
       <Accordion expanded={expanded}>
         <AccordionSummary
-          onClick={toggleExpanded}
+          onClick={handleClick}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
@@ -48,3 +54,5 @@ export default function SimpleAccordion(props) {
     </div>
   );
 }
+
+export default SimpleAccordion;

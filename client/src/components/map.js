@@ -18,8 +18,7 @@ import {
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 import LocationSearchingIcon from "@material-ui/icons/LocationSearching";
-
-require("dotenv").config();
+import { MyContext } from "../App";
 
 const libraries = ["places"];
 const center = {
@@ -31,8 +30,9 @@ export const options = {
   zoomControl: true,
 };
 
-export default function Map(props) {
+function Map(props) {
   const [selected, setSelected] = React.useState(null);
+  const { itemLatLng, mapOnItem } = React.useContext(MyContext);
   const mapRef = React.useRef();
   const onMapLoad = React.useCallback((map) => {
     mapRef.current = map;
@@ -82,6 +82,8 @@ export default function Map(props) {
     mapRef.current.panTo({ lat, lng });
     mapRef.current.setZoom(10);
   }, []);
+
+  mapOnItem && panTo(itemLatLng);
 
   if (loadError) return "Error loading Maps";
   if (!isLoaded) return "Loading Maps";
@@ -211,3 +213,5 @@ function Search({ panTo }) {
     </div>
   );
 }
+
+export default Map;
