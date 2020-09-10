@@ -14,11 +14,6 @@ function App() {
         </h1>
       </header>
       <AiropsTable />
-      {/* <Map /> */}
-      {/* <EnhancedTable/> */}
-      {/* <MaterialDataTable/> */}
-      {/* <DataTableContainer /> */}
-      {/* <OperatorsTable /> */}
     </div>
   );
 }

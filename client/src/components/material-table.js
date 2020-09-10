@@ -114,7 +114,16 @@ function AiropsTable() {
         columns={columns}
         data={data}
         icons={{ Filter: () => <SearchIcon style={{ fontSize: "medium" }} /> }}
+        actions={[
+          {
+            icon: "map",
+            tooltip: "Show on map",
+            //! make the onclick actually do shit
+            onClick: (event, rowData) => alert("You saved " + rowData.name),
+          },
+        ]}
         options={{
+          actionsColumnIndex: -1,
           filtering: true,
           search: false,
           headerStyle: {

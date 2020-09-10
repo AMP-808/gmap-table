@@ -19,8 +19,6 @@ import {
 import "@reach/combobox/styles.css";
 import LocationSearchingIcon from "@material-ui/icons/LocationSearching";
 
-//import {formatRelative} from 'date-fns'
-// import "@reach/combobox/styles.css"
 require("dotenv").config();
 
 const libraries = ["places"];
@@ -28,7 +26,7 @@ const center = {
   lat: 39.8283,
   lng: -98.5795,
 };
-const options = {
+export const options = {
   disableDefaultUI: true,
   zoomControl: true,
 };
