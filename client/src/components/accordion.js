@@ -38,7 +38,7 @@ function SimpleAccordion(props) {
       {/*ref={mapRef}> */}
       <Accordion expanded={expanded}>
         <AccordionSummary
-          onClick={handleClick}
+          onClick={toggleExpanded}
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
           id="panel1a-header"
